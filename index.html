@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEN - Plateforme de candidatures</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Style perso -->
+  <style>
+    body {
+      padding-top: 70px; /* espace pour navbar fixed */
+    }
+    .navbar {
+      background: #004080; /* bleu foncé */
+    }
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .hero {
+      background: linear-gradient(135deg, #004080, #007bff);
+      color: #fff;
+      border-radius: .5rem;
+      margin-top: 1rem;
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.1rem;
+    }
+    #offers .card {
+      transition: transform .2s;
+    }
+    #offers .card:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background: #f8f9fa;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="images/MEN img.webp" alt="Logo MEN" style="width:40px;opacity:.8" class="me-2">
+      MEN • Opportunités
+    </a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="btn btn-outline-light me-2" href="login.html">Se connecter</a></li>
+        <li class="nav-item"><a class="btn btn-warning text-dark" href="inscription.html">S'inscrire</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h1 class="display-5">Trouve un stage ou un emploi avec le MEN</h1>
+        <p class="lead">Consulte les offres officielles publiées par le Ministère, postule et suis l’avancement de tes candidatures.</p>
+        <div class="mt-3">
+          <a class="btn btn-light btn-lg me-2" href="#offers"><i class="bi bi-briefcase-fill me-1"></i> Voir les offres</a>
+          <a class="btn btn-outline-light btn-lg" href="inscription.html"><i class="bi bi-person-plus me-1"></i> Créer un compte</a>
+        </div>
+      </div>
+      <div class="col-md-5 text-center d-none d-md-block">
+        <img src="images/MEN img.webp" alt="Collaboration illustration" class="img-fluid" style="max-height:280px;">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="container my-5">
+
+  <!-- Offres -->
+  <section id="offers" class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h5 fw-bold mb-0">Offres récentes</h2>
+      <div class="d-flex align-items-center gap-2">
+        <select id="filterType" class="form-select form-select-sm w-auto">
+          <option value="">Tous</option>
+          <option value="stage">Stage</option>
+          <option value="emploi">Emploi</option>
+        </select>
+        <input id="searchInput" class="form-control form-control-sm w-50" placeholder="Rechercher titre, lieu...">
+      </div>
+    </div>
+    <div id="offersGrid" class="row g-3">
+      <!-- Offres injectées par JS -->
+    </div>
+  </section>
+
+  <!-- A propos -->
+  <section id="about" class="py-5 bg-light rounded shadow-sm">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h3 class="fw-bold mb-4 text-primary"><i class="bi bi-info-circle-fill me-2"></i> À propos</h3>
+        <p>
+          Le Ministère de l’Éducation Nationale met à disposition cette plateforme digitale pour renforcer l’accès aux opportunités professionnelles et accompagner les étudiants, jeunes diplômés et professionnels dans leur parcours.
+        </p>
+        <p>
+          Conçue comme un guichet unique, elle centralise toutes les offres de stages et d’emplois publiées par le MEN et ses partenaires, permettant aux candidats de consulter, postuler et suivre en temps réel l’évolution de leurs candidatures.
+        </p>
+        <p>
+          Plus qu’un simple portail de recrutement, cette initiative s’inscrit dans une démarche de modernisation et de transparence du service public.
+        </p>
+        <p class="fw-semibold text-primary">
+          Notre ambition : créer un espace de rencontre efficace entre compétences et opportunités.
+        </p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="images/men.jpg" alt="Collaboration illustration" class="img-fluid" style="max-height: 250px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="my-5">
+    <h3 class="fw-bold mb-4 text-primary">Contact</h3>
+    <form id="contactForm" class="row g-3 shadow-sm p-4 rounded bg-light">
+      <div class="col-md-4">
+        <label class="form-label" for="cname">Nom</label>
+        <input class="form-control" id="cname" required>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label" for="cemail">Email</label>
+        <input class="form-control" id="cemail" type="email" required>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label" for="csubject">Sujet</label>
+        <input class="form-control" id="csubject" required>
+      </div>
+      <div class="col-12">
+        <label class="form-label" for="cmessage">Message</label>
+        <textarea class="form-control" id="cmessage" rows="4" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill me-1"></i> Envoyer</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p class="mb-0">© 2025 MEN • Plateforme de candidatures – Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- Modal offre -->
+<div class="modal fade" id="offerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="modalTitle" class="modal-title">Détail de l'offre</h5>
+        <button class="btn btn-sm btn-outline-warning me-2" id="saveFav"><i class="bi bi-star"></i> Ajouter aux favoris</button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted" id="modalMeta"></p>
+        <div id="modalDescription"></div>
+        <hr class="my-4">
+        <div id="applyPanel">
+          <h6 class="fw-bold">Postuler</h6>
+          <form id="applyForm" class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="appName">Nom complet</label>
+              <input id="appName" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="appEmail">Email</label>
+              <input id="appEmail" type="email" class="form-control" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="appCover">Lettre de motivation</label>
+              <textarea id="appCover" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="appCV">CV (PDF)</label>
+              <input id="appCV" type="file" accept="application/pdf" class="form-control" required>
+              <div class="form-text">Max 5 MB</div>
+            </div>
+            <div class="col-md-12 d-flex align-items-center justify-content-center">
+              <button class="btn btn-primary" type="submit">Envoyer la candidature</button>
+            </div>
+            <div class="col-12">
+              <div id="applyAlert"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <small class="text-muted me-auto">Connecte-toi pour retrouver tes candidatures dans ton espace.</small>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
