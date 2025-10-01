@@ -1,0 +1,66 @@
+/* Reset basique */
+body, h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Bandeau bleu en haut */
+.navbar-custom {
+  background-color: #2d8cff; /* Bleu du bandeau */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo ou icône gauche */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Liens à droite */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page bleu */
+.footer-custom {
+  background-color: #2d8cff;
+  height: 40px;
+  margin-top: 30px;
+}
+
+/* Carte formulaire */
+.card {
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #2d8cff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1a6ed8;
+}
