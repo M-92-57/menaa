@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Formulaire d’inscription de candidature</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style1.css">
+</head>
+<!-- Bandeau bleu -->
+<div class="navbar-custom">
+  <div class="navbar-logo">
+    <img src="logo.png" alt="Logo"> <!-- remplace logo.png par ton image -->
+  </div>
+  <div class="navbar-links">
+    <a href="#">A propos</a>
+    <a href="#">Contact</a>
+    <a href="login.html">Se connecter</a>
+ <!-- <a href="register.html">S’inscrire</a>  -->  
+  </div>
+</div>
+
+<body class="bg-light">
+
+<div class="container py-5">
+  <div class="card shadow-sm p-4">
+    <h3 class="mb-4 text-center">Formulaire d’inscription de candidature</h3>
+    <form id="registerForm">
+
+      <!-- Prénom et Nom -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="prenom" class="form-label">Prénom</label>
+          <input type="text" class="form-control" id="prenom" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="nom" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="nom" required>
+        </div>
+      </div>
+
+      <!-- Date et Lieu de naissance -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="dateNaissance" class="form-label">Date de naissance</label>
+          <input type="date" class="form-control" id="dateNaissance" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lieuNaissance" class="form-label">Lieu de naissance</label>
+          <input type="text" class="form-control" id="lieuNaissance" placeholder="Ville" required>
+        </div>
+      </div>
+
+      <!-- Email et CIN -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="exemple@mail.com" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cin" class="form-label">CIN</label>
+          <input type="text" class="form-control" id="cin" required>
+        </div>
+      </div>
+
+      <!-- Téléphone et Adresse -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="tel" class="form-label">Tel</label>
+          <input type="tel" class="form-control" id="tel" placeholder="Téléphone" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="adresse" class="form-label">Adresse</label>
+          <input type="text" class="form-control" id="adresse" required>
+        </div>
+      </div>
+
+      <!-- Mot de passe et Confirmation -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="confirmPassword" class="form-label">Confirmez le mot de passe</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="••••••••" required>
+        </div>
+      </div>
+
+      <!-- Niveau et Spécialité -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="niveau" class="form-label">Niveau étude</label>
+          <input type="text" class="form-control" id="niveau" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="specialite" class="form-label">Spécialité choisie</label>
+          <input type="text" class="form-control" id="specialite" required>
+        </div>
+      </div>
+
+      <!-- Expérience -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="experience" class="form-label">Année d’expérience</label>
+          <input type="number" class="form-control" id="experience" placeholder="Nombre d'années" required>
+        </div>
+      </div>
+
+      <!-- Fichiers : CV, Diplôme, Lettre -->
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label class="form-label">CV</label>
+          <input class="form-control" type="file" id="cv" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Diplôme</label>
+          <input class="form-control" type="file" id="diplome" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Lettre de Motivation</label>
+          <input class="form-control" type="file" id="lettre" required>
+        </div>
+      </div>
+
+      <!-- Bouton -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+      </div>
+
+      <p class="mt-3 text-center small text-muted">
+        Déjà un compte ? <a href="login.html">Se connecter</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+    alert("Les mots de passe ne correspondent pas !");
+    return;
+  }
+
+  alert("Formulaire soumis avec succès !");
+});
+</script>
+
+</body>
+<!-- Pied de page bleu -->
+<div class="footer-custom"></div>
+
+</html>
